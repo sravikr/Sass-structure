@@ -1,0 +1,12 @@
+// Sub Menu
+
+.sub-menu {
+  // List Item
+  li {
+    color: setColor(submenu, default);
+    // Hover
+    &:hover {
+      color: setColor(submenu, hover);
+    }
+  }
+}

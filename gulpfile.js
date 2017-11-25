@@ -18,78 +18,77 @@ var sassOptions = {
   sourceComments: 'map',
 
   includePaths: 'bower_components/bootstrap-sass/assets/stylesheets'
-}
+};
+
+
 
 
 // Compiling Sass
 gulp.task('sass', function () {
-      return gulp.src('app/scss/**/*.scss')
-        .pipe(sass(sassOptions))
-        .on("error", n ot ify.onError(function (error) {
-          return "Error: " + error.message;
-        }))
-      e(autoprefixer({
-              browsers: ['last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+  return gulp.src('scss/**/*.scss').pipe(sass(sassOptions)).on("error", notify.onError(function (error) {
+    return "Error: " + error.message;
+  })).pipe(autoprefixer({
+    browsers: ['last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+  })).pipe(gulp.dest('app/css')).pipe(reload({
+    stream: true
+  }));
+});
+gulp.task('html', function () {
+  gulp.src('app/**/*.html', ['html'])
+    .pipe(reload({
+      stream: true
+    }));
 
-                .pipe(gulp.dest('app/css'))
-              ad({
-                stream: true
-              }));
-
-
-            Task lp.task('html', function () {
-              ulp.src('app/* */*.htm l', ['html'])
-                .pipe(reload({
-                  stream: true
-                }));
-
-            });
+});
 
 
 
-            // Javascript Task
-            gulp.task('scripts', function () {
-                gulp.src(['app/js/**/*.js', '!app/js/**/*.min.js'])
-                  .pipe(rename({
-                    suffix: '.min'
-                  }))
-                  .pipe(uglify())
-                  .pipe(gulp.dest('app/js'))
+// Javascript Task
+gulp.task('scripts', function () {
+  gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('app/js'))
 
 
-              ); // Minify CSS
-
-              gulp.task('minify-css', function () {
-                  gulp.src(['app/css/**/*.css'])
-                    .pipe(minifycss({
-                      keepBreaks: true
-                    }))
-                    .pipe(gulp.dest('app/css'))
+});
 
 
-                  ;
+// Minify CSS
+
+gulp.task('minify-css', function () {
+  gulp.src(['app/css/**/*.css'])
+    .pipe(minifycss({
+      keepBreaks: true
+    }))
+    .pipe(gulp.dest('app/css'))
+
+
+});
 
 
 
 
 
-                  gulp.task('watch', function () {
-                        gulp.watch('app/scss/**/*.scss', ['sass']);
-                        gulp.watch('app/**/*.html', ['html']);
-                        gulp.watch('app/**/*.js', ['scripts']);
-                        // gulp.watch(config.sassPath + '/**/*.scss', ['css']);
+gulp.task('watch', function () {
+  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('*.html', ['html']);
+  gulp.watch('js/*.js', ['scripts']);
+  // gulp.watch(config.sassPath + '/**/*.scss', ['css']);
 
-                      );
+});
 
-                      ulp.task('browser-sync', function () {
-                          browserSync({
-                            server: {
-                              baseDir: "./app/"
-                            }
-                          });
+gulp.task('browser-sync', function () {
+  browserSync({
+    server: {
+      baseDir: "./"
+    }
+  });
 
-                          ;
+});
 
 
-                          / Default
-                          gulp.task('default', ['sass', 'html', 'minify-css', 'scripts', 'browser-sync', 'watch']);
+// Default
+gulp.task('default', ['sass', 'html', 'minify-css', 'scripts', 'browser-sync', 'watch']);

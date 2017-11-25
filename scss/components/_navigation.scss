@@ -1,0 +1,12 @@
+// Main Menu
+
+.main-menu {
+  // List Item
+  li {
+    color: setColor(menu, default);
+    // Hover 
+    &:hover {
+      color: setColor(menu, hover);
+    }
+  }
+}
