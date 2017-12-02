@@ -1,3 +1,33 @@
+// Breakpoint
+$xsmall: 479px !default;
+$small: 640px !default;
+$medium: 768px !default;
+$large: 640px !default;
+
+// Spacing
+$spacing-base: 15px;
+$spacing-double: $spacing-base*2;
+$spacing-triple: $spacing-base*3;
+$spacing-four: $spacing-base*4;
+$spacing-half: $spacing-base/2;
+$spacing-quarter: $spacing-half/2;
+
+// Width
+$width-full: 100% !default;
+$width-half: $width-full / 2 !default;
+$width-25: $width-full / 4 !default;
+$width-75: $width-full - $width-25 !default;
+$full-height: $width-full;
+
+// Typography
+$font-size-body: 16px !default;
+$font-size-h1: 48px !default;
+$font-size-h2: 48px !default;
+$font-size-h3: 48px !default;
+$font-size-h4: 48px !default;
+$font-size-h5: 48px !default;
+$font-size-h6: 48px !default;
+
 // Font Weight
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -5,6 +35,7 @@ $font-weight-bold: 600;
 
 // Colors
 $color-primary: #E8E759 !default;
+$color-body: $color-primary !default;
 $color-secondary: #CCCB1E;
 $color-tertiary: #4444E4;
 $color-accent: #4444E4;
@@ -14,27 +45,52 @@ $color-hover: #0F0F6c;
 $color-active: #080840;
 $color-focus: #59E8B3;
 $color-white: #fff;
-// Menu Colors
+$color-black: #000;
+// Menu
 $color-menu: $color-primary;
 $color-menu-hover: $color-hover;
+$font-size-main-menu: $font-size-body;
+$font-size-sub-menu: $font-size-body - 2;
+
+// Submenu
+$color-submenu-bg: $color-primary;
+$color-submenu-bghover: $color-primary;
 $color-submenu: $color-primary;
 $color-submenu-hover: darken($color-primary, 10%);
 
 // Header Color
-$color-header-bg: $color-white;
+$header-bg: $color-white;
 
 // Button
-$color-button-default: $color-primary;
-$color-button-primary: $color-primary;
-$color-button-secondary: $color-secondary;
+$font-button-default: $font-size-body;
+$font-button-large: $font-size-body + 4;
+$color-button-text-default: $color-primary;
+$color-button-text-primary: $color-primary;
+$color-button-text-secondary: $color-secondary;
+$color-button-border: $color-primary;
 
-// Typography
-$font-size-h1: 48px !default;
-$font-size-h2: 48px !default;
-$font-size-h3: 48px !default;
-$font-size-h4: 48px !default;
-$font-size-h5: 48px !default;
-$font-size-h6: 48px !default;
-$colourscheme: ( menu: ( default: $color-menu, hover: $color-menu-hover ), submenu: ( default: $color-submenu, hover: $color-submenu-hover ), button: ( default: $color-button-default, primary: $color-button-primary, secondary: $color-button-secondary ), primary:$color-primary, secondary: #CCCB1E, tertiary: #4444E4, accent: #4444E4, inactive: #8E8EEC, link: #1818A5, hover: #0F0F6C, active: #080840, focus: #59E8B3 );
-// Breakpoints 
-$breakpoints:( ‘small’ : 40em, ‘medium’ : 64em, ‘large’ : 90em, ‘xlarge’ : 120em, ‘xxlarge’: 120.063em )
+// Banner 
+// Font Size
+$banner-title-font-size: $font-size-h1 !default;
+$banner-subtitle-font-size: $font-size-h1 !default;
+$banner-description-font-size: $font-size-h1 !default;
+$banner-button-font-size: $font-size-h1 !default;
+// Color
+$banner-title-text-color: $color-primary !default;
+$banner-subtitle-text-color: $color-primary !default;
+$banner-description-text-color: $color-primary !default;
+$banner-button-text-color: $color-primary !default;
+$banner-button-bg-color: $color-primary !default;
+$banner-button-border-color: $color-primary !default;
+
+// Spacing
+$spacings: ( xsm: $spacing-half,sm: $spacing-base, md: $spacing-double, lg: $spacing-triple, xlg:$spacing-four );
+
+// Colors
+$colourscheme: ( menu: ( default: $color-menu, hover: $color-menu-hover ), submenu: ( default: $color-submenu, hover: $color-submenu-hover, /* Submenu Background */bgcolor: $color-submenu-bg, bghovercolor: $color-submenu-bghover ), /*Button Text Color */ buttontext: ( default: $color-button-text-default, primary: $color-button-text-primary, secondary: $color-button-text-secondary ) , /* Button Background Color */buttonBg: ( default: $color-button-text-default, primary: $color-button-text-primary, secondary: $color-button-text-secondary ), primary:$color-primary, secondary: #CCCB1E );
+
+// FontSize
+$fontSizes: ( large: ( h1: $font-size-h1, h2: $font-size-h2,h3: $font-size-h3,h4: $font-size-h4,h5: $font-size-h5,h6: $font-size-h6 ), medium: ( h1: $font-size-h1, h2: $font-size-h2,h3: $font-size-h3,h4: $font-size-h4,h5: $font-size-h5,h6: $font-size-h6 ), small: ( h1: $font-size-h1, h2: $font-size-h2,h3: $font-size-h3,h4: $font-size-h4,h5: $font-size-h5,h6: $font-size-h6 ), menuSize: ( mainMenu: $font-size-main-menu, subMenu: $font-size-sub-menu ), buttonSize: ( default: $font-button-default, large: $font-button-large ) );
+
+// Breakpoints
+$breakpoints: ( xsml: $xsmall, small: $small, medium: $medium, large: $large );

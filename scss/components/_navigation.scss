@@ -1,12 +1,32 @@
-// Main Menu
+/* ------------------------------
+        MAIN MENU CSS STARTS
+ -------------------------------- */
 
 .main-menu {
   // List Item
   li {
     color: setColor(menu, default);
+    font-size: fontSize(menuSize, mainMenu);
     // Hover 
     &:hover {
       color: setColor(menu, hover);
+
+      .sub-menu {
+        background-color: setColor(submenu, bghover);
+      }
     }
   }
 }
+// // Submenu 
+// .sub-menu {
+//   background-color: setColor(submenu, bgcolor);
+
+//   li {
+//     color: setColor(submenu, default);
+//     font-size: fontSize(menuSize, subMenu);
+//     // Hover
+//     &:hover {
+//       color: setColor(submenu, hover);
+//     }
+//   }
+// }

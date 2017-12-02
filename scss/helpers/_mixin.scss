@@ -263,41 +263,52 @@
     @content;
   }
 }
-@mixin breakpoint($class) {
-   @if $class == mobile{
-    @media (max-width: 767px) {
+// _mixins.scss
+@mixin breakpoint($breakpoint) {
+   @if map-has-key($breakpoints, $breakpoint){
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
        @content;
     }
   }
-  @else if $class == tablet {
-     @media (min-width: 768px){
-      @content;
-    }
-  }
-  @else if $class == md {
-     @media (min-width: 1024px){
-      @content;
-    }
-  }
-  @else if $class == lg {
-     @media (min-width: 1200px){
-      @content;
-    }
-  }
-  @else if $class == xlg {
-     @media (min-width: 1441px){
-      @content;
-    }
-  }
   @else {
-     @warn"Breakpoint mixin supports: xs, sm, md, lg";
+     @warn"Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
+// @mixin breakpoint($class) {
+//    @if $class == mobile{
+//     @media (max-width: 767px) {
+//        @content;
+//     }
+//   }
+//   @else if $class == tablet {
+//      @media (min-width: 768px){
+//       @content;
+//     }
+//   }
+//   @else if $class == md {
+//      @media (min-width: 1024px){
+//       @content;
+//     }
+//   }
+//   @else if $class == lg {
+//      @media (min-width: 1200px){
+//       @content;
+//     }
+//   }
+//   @else if $class == xlg {
+//      @media (min-width: 1441px){
+//       @content;
+//     }
+//   }
+//   @else {
+//      @warn"Breakpoint mixin supports: xs, sm, md, lg";
+//   }
+// }
 @function setColor($scheme, $tone) {
    @return map-get(map-get($colourscheme, $scheme), $tone);
 }
 @function fontSize($size, $screen) {
-   @return map-get(map-get($fontSize, $size), $screen);
+   @return map-get(map-get($fontSizes, $size), $screen);
 }
 @function Spacing($spacingSize, $direction) {
    @return map-get(map-get($spacings, $spacingSize), $direction);

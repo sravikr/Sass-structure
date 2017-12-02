@@ -1,0 +1,21 @@
+/* ------------------------------
+        BUTTON CSS STARTS
+ -------------------------------- */
+.btn {
+  //  Default Button
+  font-size: fontSize(buttonSize, default);
+  color: setColor(buttontext, default);
+  border: 1px solid $color-button-border;
+  background: setColor(buttonBg, default);
+  padding: map-get($spacings, sm) 0;
+  // Hover
+  &:hover {
+    color: setColor(buttontext, hover);
+    background: setColor(buttonBg, default);
+  }
+
+  // Large
+  &-large {
+    font-size: fontSize(buttonSize, large);
+  }
+}

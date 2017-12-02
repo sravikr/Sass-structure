@@ -1,0 +1,35 @@
+/* ------------------------------
+        BANNER CSS STARTS
+ -------------------------------- */
+.banner-sec {
+  //Banner Caption
+  .banner-caption {
+    &.centered {
+      @include center(both);
+    }
+    // Center from Top
+    &.vertical {
+      @include center(vertical);
+    }
+    // Center From Left
+    &.horizontal {
+      @include center(horizontal);
+    }
+    // Title
+    .banner-title {
+      font-size: $banner-title-font-size;
+      color: $banner-title-text-color;
+    }
+    // Subtitle
+    .banner-subtitle {
+      font-size: $banner-subtitle-font-size;
+      color: $banner-subtitle-text-color;
+    }
+    // Subtitle
+    .banner-description {
+      font-size: $banner-description-font-size;
+      color: $banner-description-text-color;
+    }
+  }
+
+}

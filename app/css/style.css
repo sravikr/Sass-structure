@@ -484,27 +484,127 @@ template {
   display: none;
 }
 
-/* line 5, scss/components/_navigation.scss */
-.main-menu li {
+/* ------------------------------
+        BUTTON CSS STARTS
+ -------------------------------- */
+/* line 4, scss/components/_button.scss */
+.btn {
+  font-size: 16px;
   color: #E8E759;
+  border: 1px solid #E8E759;
+  background: #E8E759;
+  padding: 15px 0;
 }
 
-/* line 8, scss/components/_navigation.scss */
+/* line 12, scss/components/_button.scss */
+.btn:hover {
+  background: #E8E759;
+}
+
+/* line 18, scss/components/_button.scss */
+.btn-large {
+  font-size: 20px;
+}
+
+/* ------------------------------
+        MAIN MENU CSS STARTS
+ -------------------------------- */
+/* line 7, scss/components/_navigation.scss */
+.main-menu li {
+  color: #E8E759;
+  font-size: 16px;
+}
+
+/* line 11, scss/components/_navigation.scss */
 .main-menu li:hover {
   color: #0F0F6c;
 }
 
-/* line 5, scss/components/_sub-navigation.scss */
+/* ------------------------------
+        SUBMENU CSS STARTS
+ -------------------------------- */
+/* line 7, scss/components/_sub-navigation.scss */
 .sub-menu li {
   color: #E8E759;
+  font-size: 14px;
 }
 
-/* line 8, scss/components/_sub-navigation.scss */
+/* line 11, scss/components/_sub-navigation.scss */
 .sub-menu li:hover {
   color: #e2e12c;
 }
 
-/* line 1, scss/layout/_header.scss */
+/* ------------------------------
+        BANNER CSS STARTS
+ -------------------------------- */
+/* line 7, scss/components/_banner.scss */
+.banner-sec .banner-caption.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* line 11, scss/components/_banner.scss */
+.banner-sec .banner-caption.vertical {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 15, scss/components/_banner.scss */
+.banner-sec .banner-caption.horizontal {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+}
+
+/* line 19, scss/components/_banner.scss */
+.banner-sec .banner-caption .banner-title {
+  font-size: 48px;
+  color: #E8E759;
+}
+
+/* line 24, scss/components/_banner.scss */
+.banner-sec .banner-caption .banner-subtitle {
+  font-size: 48px;
+  color: #E8E759;
+}
+
+/* line 29, scss/components/_banner.scss */
+.banner-sec .banner-caption .banner-description {
+  font-size: 48px;
+  color: #E8E759;
+}
+
+/* ------------------------------
+        HEADER CSS STARTS
+ -------------------------------- */
+/* line 5, scss/layout/_header.scss */
 .site-header {
   background: #fff;
+  width: 100%;
+  float: left;
+  width: 100%;
+  padding: 15px 0;
+}
+
+/* line 12, scss/layout/_header.scss */
+.site-header.fixed {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  /* line 12, scss/layout/_header.scss */
+  .site-header.fixed {
+    position: fixed;
+  }
 }

@@ -1,3 +1,22 @@
+/* ------------------------------
+        HEADER CSS STARTS
+ -------------------------------- */
+
 .site-header {
-  background: $color-header-bg;
+  background: $header-bg;
+  width: $width-full;
+  float: left;
+  width: $width-full;
+  padding: map-get($spacings, sm) 0;
+  // Fixed Header
+  &.fixed {
+    position: relative;
+    left: 0;
+    top: 0;
+    // After Mobile Screen
+    @include breakpoint(medium) {
+      position: fixed;
+
+    }
+  }
 }
