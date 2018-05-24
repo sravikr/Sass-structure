@@ -1,0 +1,10 @@
+/* ------------------------------
+        TEXTAREA CSS STARTS
+ -------------------------------- */
+textarea {
+  color: $textarea-color-text;
+  font-size: $textarea-font-size;
+  border: 1px solid $textarea-border-color;
+  background: $textarea-bgcolor;
+  -webkit-appearance: none;
+}

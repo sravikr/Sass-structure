@@ -1,0 +1,12 @@
+/* ------------------------------
+        INPUT CSS STARTS
+ -------------------------------- */
+input[type="email"],
+input[type="tel"],
+input[type="text"] {
+  color: $input-color-text;
+  font-size: $input-font-size;
+  border: 1px solid $input-border-color;
+  background: $input-bgcolor;
+  -webkit-appearance: none;
+}

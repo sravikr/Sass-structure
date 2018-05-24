@@ -3,13 +3,12 @@
  -------------------------------- */
 
 .sub-menu {
-  // List Item
-  li {
-    color: setColor(submenu, default);
-    font-size: fontSize(menuSize, subMenu);
-    // Hover
-    &:hover {
-      color: setColor(submenu, hover);
+    // List Item
+    li {
+        color: setColor(submenu, default);
+        font-size: fontSize(menuSize, subMenu); // Hover
+        &:hover {
+            color: setColor(submenu, hover);
+        }
     }
-  }
 }

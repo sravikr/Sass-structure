@@ -1,0 +1,16 @@
+/* ------------------------------
+        SUBMIT CSS STARTS
+ -------------------------------- */
+
+input[type="submit"] {
+  color: $submit-color-text;
+  font-size: $submit-font-size;
+  border: 1px solid $submit-border-color;
+  background: $submit-bgcolor;
+  -webkit-appearance: none;
+
+  &:hover {
+    background: $submit-bgcolor--hover;
+    border: 1px solid $submit-border-color--hover;
+  }
+}

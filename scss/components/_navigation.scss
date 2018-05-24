@@ -3,19 +3,31 @@
  -------------------------------- */
 
 .main-menu {
-  // List Item
-  li {
-    color: setColor(menu, default);
-    font-size: fontSize(menuSize, mainMenu);
-    // Hover 
-    &:hover {
-      color: setColor(menu, hover);
+  ul {
+    padding: 0;
+    margin: 0;
+    // List Item
+    li {
+      color: setColor(menu, default);
+      font-size: fontSize(menuSize, mainMenu);
+      display: block;
+      padding: 0 map-get($spacings, sm);
 
-      .sub-menu {
-        background-color: setColor(submenu, bghover);
+      // Hover 
+      &:hover {
+        color: setColor(menu, hover);
+
+        .sub-menu {
+          background-color: setColor(submenu, bghover);
+        }
+      }
+      // Mobile Layout
+      @include breakpoint(medium) {
+        display: inline-block;
       }
     }
   }
+
 }
 // // Submenu 
 // .sub-menu {

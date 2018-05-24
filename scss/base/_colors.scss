@@ -1,0 +1,18 @@
+$colors: ( grey: ( base: #404145, light: #c7c7cd), yellow: ( base: #ecaf2d), green: ( base: #5ad864));
+@mixin color-modifiers($attribute: 'color', $prefix: '-', $separator: '-') {
+    @each $name,
+    $color in $colors {
+        &#{$prefix}#{$name} {
+            @each $tone,
+            $hex in $color {
+                &#{$separator}#{$tone} {
+                    #{$attribute}: $hex;
+                }
+            }
+        }
+    }
+}
+
+.text {
+    @include color-modifiers();
+}

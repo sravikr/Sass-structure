@@ -1,0 +1,10 @@
+/* ------------------------------
+        FOOTER CSS STARTS
+ -------------------------------- */
+.site-footer {
+  background: $footer-bg-color;
+  font-size: $footer-font-size;
+  padding: map-get($spacings, sm) 0;
+  float: left;
+  width: $width-full;
+}

@@ -1,0 +1,32 @@
+/* ------------------------------
+ --- TITLE SECTION CSS STARTS ---
+ -------------------------------- */
+.heading-sec {
+  float: left;
+  width: $width-full;
+  padding: map-get($spacings, md) 0;
+  // Title
+  .heading-sec-title {
+    font-size: $heading-sec-title-font-size;
+    color: $heading-sec-title-text-color;
+  }
+  // Subtitle
+  .heading-sec-subtitle {
+    font-size: $heading-sec-subtitle-font-size;
+    color: $heading-sec-subtitle-text-color;
+  }
+  // Description
+  .heading-sec-description {
+    font-size: $heading-sec-description-font-size;
+    color: $heading-sec-description-text-color;
+  }
+  // CTA
+  .heading-sec-button {
+    font-size: $heading-sec-button-font-size;
+    color: $heading-sec-button-text-color;
+
+    &:hover {
+      color: $heading-sec-button-text-color--hover;
+    }
+  }
+}
